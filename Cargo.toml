@@ -1,0 +1,39 @@
+[package]
+name = "gen_passphrase"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+keywords = ["passphrase", "generator", "dictionary", "custom", "random"]
+description = "A secure, simple yet customiziable passphrase generator. Use provided dictionarizes or bring your own!"
+
+[dependencies]
+nanorand = { version = "0.7", features = ["chacha"] }
+
+[dev-dependencies]
+clap = { version = "4.2", features = ["derive"] }
+
+[features]
+# include no dictionaries by default
+default = []
+
+# define dictionaries
+eff_short_2 = []
+eff_short_1 = []
+eff_large = []
+
+[package.metadata.docs.rs]
+all-features = true
+# enable unstable features in the documentation https://stackoverflow.com/a/61417700/4809297
+rustdoc-args = ["--cfg", "docsrs"]
+
+[[example]]
+name = "single"
+required-features = ["eff_short_2"]
+
+[[example]]
+name = "mix"
+required-features = ["eff_short_2", "eff_short_1", "eff_large"]
+
+[[example]]
+name = "custom"
+required-features = ["eff_short_1"]
