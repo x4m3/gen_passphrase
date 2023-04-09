@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 keywords = ["passphrase", "generator", "dictionary", "custom", "random"]
-description = "A secure, simple yet customiziable passphrase generator. Use provided dictionarizes or bring your own!"
+description = "A secure, simple yet customizable passphrase generator. Use provided dictionaries or bring your own!"
 
 [dependencies]
 nanorand = { version = "0.7", features = ["chacha"] }
